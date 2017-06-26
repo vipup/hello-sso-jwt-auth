@@ -39,7 +39,7 @@ public class LoginController {
 
         String token = JwtUtil.generateToken(signingKey, username);
         CookieUtil.create(httpServletResponse, jwtTokenCookieName, token, false, -1, "localhost");
-
+        System.out.println("GENERATED:"+token);
         return "redirect:" + redirect;
     }
 }
